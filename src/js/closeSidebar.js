@@ -3,8 +3,11 @@ import {
     close,
 } from './store/store';
 
-const closeEvent = () => !sidebar.classList.contains('hidden')
-                         && sidebar.classList.add('hidden');
+const closeEvent = () =>
+{
+    if(!sidebar.classList.contains('hidden'))
+        sidebar.classList.add('hidden');
+};
 
 /**
  * Closes sidebar

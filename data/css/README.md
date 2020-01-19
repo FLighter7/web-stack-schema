@@ -19,22 +19,22 @@ body {
 ```
 Существует три способа применения CSS к HTML:
 1. Внутри тега `<head>` через ссылку на внешний файл стилей:
-```html
-<link rel='stylesheet' type='text/css' href='<полный_или_относительный_путь_до_файла>.css'>
-```
+    ```html
+    <link rel='stylesheet' type='text/css' href='<полный_или_относительный_путь_до_файла>.css'>
+    ```
 2. Внутри тега `<head>` через тег `<style>`:
-```html
-<style>
-    /* Сюда вставить стили, тогда .css файл не нужен */
-    body {
-        background-color: silver;
-    }
-</style>
-```
+    ```html
+    <style>
+        /* Сюда вставить стили, тогда .css файл не нужен */
+        body {
+            background-color: silver;
+        }
+    </style>
+    ```
 3. Написать стили непосредственно внутри элемента, к которому они применяются (inline стили), через атрибут `style`:
-```html
-<body style='background-color: silver;'></body>
-```
+    ```html
+    <body style='background-color: silver;'></body>
+    ```
 
 ## Полезные ссылки:
 - [Учебник от w3schools (англ)](https://www.w3schools.com/css)
