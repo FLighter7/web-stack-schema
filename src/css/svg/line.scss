@@ -1,0 +1,13 @@
+/**
+ *  One line
+ */
+$lineColor: #000;
+
+.line {
+    stroke: $lineColor;
+    stroke-width: 1.1;
+}
+
+.line-arrow {
+    fill: $lineColor;
+}

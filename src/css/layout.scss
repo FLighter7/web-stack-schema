@@ -1,0 +1,40 @@
+/**
+ *  Basic styles
+ */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', 'Arial', 'Helvetica', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.about {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    // From here: https://materializecss.com/navbar.html
+    box-shadow: 0 2px 2px 0    rgba(0, 0, 0, 0.14),
+                0 3px 1px -2px rgba(0, 0, 0, 0.12),
+                0 1px 5px 0    rgba(0, 0, 0, 0.2);
+    user-select: none;
+}
+
+.svg {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.01);
+}
+
+.layout {
+    transform-origin: center;
+}

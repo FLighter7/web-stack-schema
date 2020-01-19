@@ -1,0 +1,42 @@
+/**
+ *  One node
+ */
+.node {
+
+    .circle {
+        fill: #FCFCFC;
+        stroke: gray;
+        stroke-width: 2;
+    }
+
+    .text {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 11px;
+        fill: #000;
+        user-select: none;
+    }
+
+    &.animated {
+        cursor: pointer;
+
+        .circle {
+            stroke: #000;
+            transition: 0.2s ease fill;
+        }
+
+        &:hover .circle {
+            fill: darken($color: #FCFCFC, $amount: 10%);
+        }
+
+        &:active .circle {
+            fill: darken($color: #FCFCFC, $amount: 20%);
+        }
+    }
+
+    &.focused {
+
+        .circle {
+            filter: url(#dropshadow);
+        }
+    }
+}

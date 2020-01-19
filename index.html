@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='ru'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+    <title>Схема веб-стека</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto+Mono&display=block&subset=cyrillic'>
+    <link rel='stylesheet' href='dist/index.min.css'>
+    <script src='dist/index.min.js' defer></script>
+</head>
+<body>
+    <p class='about'>Схема различных знаний и их связи</p>
+    <svg class='svg' id='svg'>
+        <defs>
+            <!-- Line arrow -->
+            <marker
+                id='arrow'
+                viewBox='0 0 10 10'
+                refX='10'
+                refY='5'
+                orient='auto'
+                markerUnits='strokeWidth'
+                markerWidth='10'
+                markerHeight='10'
+            >
+                <path class='line-arrow' d='M0,0 L0,10 L10,5 Z'></path>
+            </marker>
+            <!-- Focused circle (from here: https://codepen.io/mullany/pen/sJopz) -->
+            <filter id='dropshadow' width='150%' height='150%' x='-25%' y='-25%'>
+                <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="SA-o-blur"/>
+                <feComponentTransfer in="SA-o-blur" result="SA-o-b-contIN">
+                    <feFuncA type="table" tableValues="0.65 0.68 0.75 0.95 1 1 1 "/>
+                </feComponentTransfer>
+                <feComposite operator="in" in="SA-o-blur" in2="SA-o-b-contIN" result="SA-o-b-cont"/>
+                <feComponentTransfer in="SA-o-b-cont" result="SA-o-b-c-sprd">
+                    <feFuncA type="linear" slope="10"/>
+                </feComponentTransfer>
+                <feColorMatrix in="SA-o-b-c-sprd" type="matrix" values="0 0 0 0 0.302 0 0 0 0 0.565 0 0 0 0 0.996 0 0 0 1 0" result="SA-o-b-c-s-recolor"/>
+                <feMerge>
+                    <feMergeNode in="SA-o-b-c-s-recolor"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
+    </svg>
+    <aside class='sidebar hidden' id='sidebar'>
+        <button class='close' id='close' title='Закрыть' aria-label='Закрыть боковую панель'>Закрыть</button>
+        <div class='sidebar__loader' id='loader'>
+            <span class='sidebar__loader-1'></span>
+            <span class='sidebar__loader-2'></span>
+            <span class='sidebar__loader-3'></span>
+        </div>
+        <section class='content markdown-body hidden' id='content'></section>
+    </aside>
+</body>
+</html>

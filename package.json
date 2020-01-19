@@ -1,0 +1,33 @@
+{
+    "completed": 	false,
+    "name":         "web-stack-schema",
+    "version":      "1.0.0",
+    "description":  "Web-Stack Schema",
+    "author":       "FLighter",
+    "license":      "MIT",
+    "main":         "./dist/index.min.js",
+    "scripts":
+    {
+        "compile:data": "node buildData.js",
+        "compile:js":   "rollup --config",
+        "compile:css":  "sass src/index.scss dist/index.min.css --no-source-map --style compressed",
+        "compile":      "npm-run-all -p compile:css compile:js",
+        "watch:js":     "rollup --config --watch",
+        "watch:css":    "sass src/index.scss dist/index.min.css --no-source-map --style compressed --watch",
+        "watch":        "npm-run-all -p watch:css watch:js",
+        "server":       "node server.js"
+    },
+    "devDependencies":
+    {
+        "npm-run-all":                  "latest",
+        "rollup":                       "latest",
+        "rollup-plugin-terser":         "latest",
+        "@rollup/plugin-node-resolve":  "latest",
+        "@rollup/plugin-commonjs":      "latest",
+        "sass":                         "latest",
+        "normalize.css":                "latest",
+        "github-markdown-css":          "latest",
+        "marked":                       "latest",
+        "express":                      "latest"
+    }
+}
