@@ -14,6 +14,40 @@ const data = [
                 "scale": 2.5,
                 "children": [
                     {
+                        "id": "/css/postprocessor/minification",
+                        "text": "Минификаторы",
+                        "x": 0,
+                        "y": 124,
+                        "isGroup": true,
+                        "scale": 2.1,
+                        "children": [
+                            {
+                                "id": "/css/postprocessor/minification/clean-css",
+                                "text": "clean-css",
+                                "x": -104,
+                                "y": 0,
+                                "isGroup": true,
+                                "scale": 1.6
+                            },
+                            {
+                                "id": "/css/postprocessor/minification/cssnano",
+                                "text": "cssnano",
+                                "x": 0,
+                                "y": 100,
+                                "isGroup": true,
+                                "scale": 1.5
+                            },
+                            {
+                                "id": "/css/postprocessor/minification/csso",
+                                "text": "CSSO",
+                                "x": -71,
+                                "y": 71,
+                                "isGroup": true,
+                                "scale": 1.5
+                            }
+                        ]
+                    },
+                    {
                         "id": "/css/postprocessor/postcss",
                         "text": "PostCSS",
                         "x": -100,
@@ -45,23 +79,29 @@ const data = [
                         "text": "Less",
                         "x": 0,
                         "y": -100,
-                        "isGroup": true,
                         "scale": 1.5
                     },
                     {
                         "id": "/css/preprocessor/sass",
-                        "text": "Sass",
-                        "x": -71,
-                        "y": -71,
-                        "isGroup": true,
-                        "scale": 1.5
+                        "text": "Sass/SCSS",
+                        "x": -74,
+                        "y": -74,
+                        "scale": 1.6,
+                        "children": [
+                            {
+                                "id": "/css/preprocessor/sass/node-sass",
+                                "text": "Node-sass",
+                                "x": -74,
+                                "y": -74,
+                                "scale": 1.6
+                            }
+                        ]
                     },
                     {
                         "id": "/css/preprocessor/stylus",
                         "text": "Stylus",
                         "x": -100,
                         "y": 0,
-                        "isGroup": true,
                         "scale": 1.5
                     }
                 ]
