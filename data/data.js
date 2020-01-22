@@ -17,8 +17,7 @@ const data = [
                         "id": "/css/postprocessor/minification",
                         "text": "Минификаторы",
                         "x": 0,
-                        "y": 124,
-                        "isGroup": true,
+                        "y": 186,
                         "scale": 2.1,
                         "children": [
                             {
@@ -26,7 +25,6 @@ const data = [
                                 "text": "clean-css",
                                 "x": -104,
                                 "y": 0,
-                                "isGroup": true,
                                 "scale": 1.6
                             },
                             {
@@ -34,7 +32,6 @@ const data = [
                                 "text": "cssnano",
                                 "x": 0,
                                 "y": 100,
-                                "isGroup": true,
                                 "scale": 1.5
                             },
                             {
@@ -42,7 +39,6 @@ const data = [
                                 "text": "CSSO",
                                 "x": -71,
                                 "y": 71,
-                                "isGroup": true,
                                 "scale": 1.5
                             }
                         ]
@@ -52,18 +48,23 @@ const data = [
                         "text": "PostCSS",
                         "x": -100,
                         "y": 0,
-                        "isGroup": true,
                         "scale": 1.5,
                         "children": [
                             {
                                 "id": "/css/postprocessor/postcss/autoprefixer",
                                 "text": "Autoprefixer",
-                                "x": -124,
-                                "y": 0,
-                                "isGroup": true,
+                                "x": -62,
+                                "y": -107,
                                 "scale": 2.1
                             }
                         ]
+                    },
+                    {
+                        "id": "/css/postprocessor/stylelint",
+                        "text": "stylelint",
+                        "x": -156,
+                        "y": 90,
+                        "scale": 2
                     }
                 ]
             },
