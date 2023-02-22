@@ -25,7 +25,6 @@ export class Layout {
 		const scale = this._scale / 10;
 		const translateX = Math.round(this._translate.x / scale);
 		const translateY = Math.round(this._translate.y / scale);
-		console.log('Update', translateX, translateY);
 		this._group.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
 	}
 
@@ -46,13 +45,8 @@ export class Layout {
 	 * Drag & Drop
 	 */
 	_setEventTranslate() {
-		document.onpointerup = (e) => {
-			console.log('UP', e);
-			this._group.onpointermove = null;
-		};
-
+		document.onpointerup = () => (this._group.onpointermove = null);
 		this._group.onpointerdown = (e) => {
-			console.log('DOWN', e, e.which, e.clientX, e.clientY);
 			// Left pointer only
 			if(e.which !== 1) {
 				return;
@@ -61,9 +55,7 @@ export class Layout {
 			const beforeMove = {x: e.clientX, y: e.clientY};
 			let offset = {...beforeMove};
 			this._moved = false;
-
 			this._group.onpointermove = (e) => {
-				console.log('MOVE', e, offset);
 				if(offset) {
 					if(Math.abs(e.clientX - offset.x) <= this._maxOffset && Math.abs(e.clientY - offset.y) <= this._maxOffset) {
 						return;
