@@ -1,7 +1,10 @@
-const express = require('express'),
-      app     = express(),
-      port    = 3000;
+const path = require('path');
+const express = require('express');
 
-app.use(express.static(__dirname));
-app.get('/', (req, res) => res.sendFile(__dirname+'/index.html'));
-app.listen(port, () => console.log(`Server started on port ${port}`));
+const port = 3000;
+const dir = __dirname;
+const app = express();
+
+app.use(express.static(dir));
+app.get('/', (req, res) => res.sendFile(path.join(dir, 'index.html')));
+app.listen(port, () => console.log(`Server started on port: ${port}`));

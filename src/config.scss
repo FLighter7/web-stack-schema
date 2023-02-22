@@ -1,0 +1,26 @@
+/**
+ * Colors
+ */
+$colors: (
+	'html': #ED632F,
+	'css': #316AB1,
+	'javascript': #FCB318,
+	'other': #000000,
+);
+
+/**
+ * Font families
+ */
+$fonts: (
+	'main': #{'Roboto', 'Arial', 'Helvetica', sans-serif},
+	'mono': #{'Roboto Mono', monospace},
+);
+
+/**
+ * Font sizes
+ */
+$fontSizes: (
+	'main': 16px,
+	'sidebar': 0.9rem,
+	'svg': 11px,
+);

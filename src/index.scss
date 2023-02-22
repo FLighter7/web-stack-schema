@@ -1,8 +1,6 @@
 @import '../node_modules/normalize.css/normalize';
 @import '../node_modules/github-markdown-css/github-markdown';
 
-@import './css/layout';
-@import './css/sidebar';
-
-@import './css/svg/node';
-@import './css/svg/line';
+@import './config';
+@import './common';
+@import './components';

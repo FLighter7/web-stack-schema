@@ -1,0 +1,25 @@
+/**
+ * Arrow line between nodes
+ */
+$defaultColor: #000;
+
+.line {
+	stroke: $defaultColor;
+	stroke-width: 1.1;
+
+	@each $key, $color in $colors {
+		&_#{$key} {
+			stroke: $color;
+		}
+	}
+}
+
+.line-arrow {
+	fill: $defaultColor;
+
+	@each $key, $color in $colors {
+		&_#{$key} {
+			fill: $color;
+		}
+	}
+}

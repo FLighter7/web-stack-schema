@@ -1,0 +1,19 @@
+/**
+ * Markdown content
+ */
+.sidebar__content {
+	height: calc(100% - #{$closeSize});
+	padding: $paddingH $paddingW $paddingH * 3;
+	font-size: 0.9rem;
+	overflow-x: hidden;
+	overflow-y: auto;
+	word-break: break-all;
+	word-break: break-word;
+	background-color: white;
+	border-top-left-radius: 10px;
+	transition: $loaderTransition;
+
+	&_hidden {
+		opacity: 0;
+	}
+}

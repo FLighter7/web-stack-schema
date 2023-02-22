@@ -1,0 +1,48 @@
+/**
+ * Node (circle + text)
+ */
+.node {
+	$this: &;
+
+	&__circle {
+		fill: #FCFCFC;
+		stroke: #808080;
+		stroke-width: 2;
+	}
+
+	&__text {
+		font-family: map-get($fonts, 'mono');
+		font-size: 11px;
+		fill: #000;
+		user-select: none;
+	}
+
+	&_animated {
+		cursor: pointer;
+
+		#{$this}__circle {
+			stroke: #000;
+			transition: 0.2s ease fill;
+
+			@each $key, $color in $colors {
+				&_#{$key} {
+					stroke: $color;
+				}
+			}
+		}
+
+		&:hover &__circle {
+			fill: darken($color: #FCFCFC, $amount: 10%);
+		}
+
+		&:active &__circle {
+			fill: darken($color: #FCFCFC, $amount: 20%);
+		}
+	}
+
+	&_focused {
+		#{$this}__circle {
+			filter: url(#dropshadow);
+		}
+	}
+}

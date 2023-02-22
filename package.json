@@ -1,33 +1,32 @@
 {
-    "completed": 	false,
-    "name":         "web-stack-schema",
-    "version":      "1.0.0",
-    "description":  "Web-Stack Schema",
-    "author":       "FLighter",
-    "license":      "MIT",
-    "main":         "./dist/index.min.js",
-    "scripts":
-    {
-        "compile:data": "node buildData.js",
-        "compile:js":   "rollup --config",
-        "compile:css":  "sass src/index.scss dist/index.min.css --no-source-map --style compressed",
-        "compile":      "npm-run-all -p compile:css compile:js",
-        "watch:js":     "rollup --config --watch",
-        "watch:css":    "sass src/index.scss dist/index.min.css --no-source-map --style compressed --watch",
-        "watch":        "npm-run-all -p watch:css watch:js",
-        "server":       "node server.js"
-    },
-    "devDependencies":
-    {
-        "npm-run-all":                  "latest",
-        "rollup":                       "latest",
-        "rollup-plugin-terser":         "latest",
-        "@rollup/plugin-node-resolve":  "latest",
-        "@rollup/plugin-commonjs":      "latest",
-        "sass":                         "latest",
-        "normalize.css":                "latest",
-        "github-markdown-css":          "latest",
-        "marked":                       "latest",
-        "express":                      "latest"
-    }
+  "name": "web-stack-schema",
+  "version": "1.0.0",
+  "description": "Web-Stack Schema",
+  "main": "dist/index.js",
+  "scripts": {
+    "build:data": "node build-data.js",
+    "build:css": "sass src/index.scss dist/index.css --no-source-map --style compressed",
+    "build:js": "rollup --config",
+    "build": "npm-run-all -s build:data build:css build:js",
+    "watch:css": "sass src/index.scss dist/index.css --no-source-map --style compressed --watch",
+    "watch:js": "rollup --config --watch",
+    "watch": "npm-run-all -p watch:css watch:js",
+    "server": "node server.js"
+  },
+  "author": "FLighter",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "express": "^4.18.2",
+    "github-markdown-css": "^5.2.0",
+    "normalize.css": "^8.0.1",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^2.79.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.58.3"
+  },
+  "dependencies": {
+    "marked": "^4.2.12"
+  }
 }

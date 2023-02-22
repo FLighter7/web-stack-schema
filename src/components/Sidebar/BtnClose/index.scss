@@ -1,0 +1,52 @@
+@use 'sass:math';
+
+/**
+ * Close button
+ */
+$closeSize: 25px;
+$crossWidth: 50%;
+
+.sidebar__close {
+	display: inline-block;
+	position: relative;
+	margin-bottom: $paddingH;
+	width: $closeSize;
+	height: $closeSize;
+	font-size: 0;
+	padding: 0;
+	border: none;
+	border-radius: 100%;
+	cursor: pointer;
+	transition: 0.3s ease background-color;
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		width: $crossWidth;
+		height: 3px;
+		left: 50% - math.div($crossWidth, 2);
+		background-color: #000;
+	}
+
+	&:before {
+		transform: rotate(45deg);
+	}
+
+	&:after {
+		transform: rotate(-45deg);
+	}
+
+	&:hover {
+		background-color: silver;
+	}
+
+	&:active {
+		background-color: darken($color: silver, $amount: 20%);
+	}
+
+	&:focus {
+		outline: none;
+		box-shadow: 0 0 2px 2px rgb(77, 144, 254);
+	}
+}

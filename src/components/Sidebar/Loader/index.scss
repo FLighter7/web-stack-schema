@@ -1,0 +1,52 @@
+@use 'sass:math';
+
+/**
+ * Loader
+ */
+$loaderSize: 16px;
+$loaderTransition: 0.5s linear opacity;
+$animationTime: 0.5s;
+
+.sidebar__loader {
+	position: absolute;
+	width: $loaderSize;
+	height: $loaderSize;
+	top: calc(50% - #{$loaderSize} / 2);
+	left: calc(50% - #{$loaderSize} / 2);
+	z-index: -1;
+	transition: $loaderTransition;
+
+	&_hidden {
+		opacity: 0;
+	}
+
+	&-1,
+	&-2,
+	&-3 {
+		position: absolute;
+		width: $loaderSize;
+		height: $loaderSize;
+		border-radius: 100%;
+		background-color: rgba(0, 0, 0, 0.3);
+		animation: $animationTime ease-out alternate infinite loading;
+	}
+
+	&-1 {
+		right: $loaderSize * 2;
+	}
+
+	&-2 {
+		animation-delay: math.div(-$animationTime, 2);
+	}
+
+	&-3 {
+		left: $loaderSize * 2;
+		animation-delay: -$animationTime;
+	}
+}
+
+@keyframes loading
+{
+	from { transform: scale(0.5); }
+	to   { transform: scale(1.5); }
+}
