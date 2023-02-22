@@ -11,6 +11,8 @@ body {
 	height: 100%;
 	font-family: map-get($fonts, 'main');
 	font-size: 16px;
+	// @see https://stackoverflow.com/questions/48124372/pointermove-event-not-working-with-touch-why-not
+	touch-action: none;
 }
 
 body {
